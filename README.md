@@ -26,3 +26,7 @@ This project is a simple web application that offers a shoe management and sales
 ### Admin Panel  
 ![Admin Panel](https://github.com/cinarkahraman/ShoeApp/blob/master/adminpanel.png?raw=true)
 
+## Contact 📧
+For questions or suggestions, feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/cinarkahraman/).
+
+
