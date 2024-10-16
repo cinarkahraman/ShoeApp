@@ -1,0 +1,150 @@
+﻿@model Abc.MvcWebUI.Models.Cart
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+  
+    .product-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        padding: 10px;
+    }
+
+    .remove-button, .custom-button {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 8px 15px;
+        cursor: pointer;
+    }
+    custom-button:hover {
+        background-color: #4CAF50; /* Mouse üzerine gelindiğinde yeşil arka plan rengi */
+        color: #ffffff; /* Mouse üzerine gelindiğinde beyaz metin rengi */
+        border-color: #4CAF50; /* Mouse üzerine gelindiğinde yeşil border rengi */
+    }
+
+    .green-button {
+        background-color: #4CAF50;
+        color: #ffffff;
+        border-color: #4CAF50;
+    }
+    .product-image {
+        max-width: 80px;
+        margin-right: 10px;
+    }
+
+    .product-details {
+        flex-grow: 1;
+    }
+
+    .title-and-quantity {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product-title {
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: #343a40;
+    }
+
+    .product-quantity {
+        margin: 0;
+        color: #007bff;
+    }
+
+    .product-price, .total-amount {
+        margin: 0;
+        color: #007bff;
+    }
+
+    .cart-total {
+        margin-top: 20px;
+        text-align: right;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .total-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #eee;
+        padding: 10px;
+    }
+
+    .total-text {
+        margin: 0;
+    }
+
+    .total-amount {
+        margin: 0;
+        font-weight: bold;
+    }
+
+
+</style>
+<div class="container">
+    <h1 class="text-center">Shopping Cart</h1>
+
+    @if (Model.CartLines.Count > 0)
+    {
+        <div class="cart">
+            @foreach (var item in Model.CartLines)
+            {
+                <div class="cart-item">
+                    <div class="product-box">
+                        <img src="/Upload/@item.Product.Image" alt="@item.Product.Name" class="product-image">
+                        <div class="product-details">
+                            <div class="title-and-quantity">
+                                <h3 class="product-title">@item.Product.Name</h3>
+                            </div>
+                            <p class="product-price">@item.Product.Price.ToString("c", new System.Globalization.CultureInfo("en-US"))</p>
+                            <p class="product-quantity">Quantity: @item.Quantity</p>
+                        </div>
+                        <form method="post" action="/Cart/RemoveFromCart">
+                            <input type="hidden" name="Id" value="@item.Product.Id" />
+                            <button type="submit" class="remove-button">
+                                <i class="fas fa-trash-alt"></i> Remove
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            }
+
+            <div class="cart-total">
+                <div class="total-box">
+                    <p class="total-text">Toplam:</p>
+                    <p class="total-amount">@Model.Total().ToString("c", new System.Globalization.CultureInfo("en-US"))</p>
+                </div>
+            </div>
+        </div>
+        <div class="additional-buttons" style="display: flex; justify-content: flex-end; margin-top: 20px;">
+            <a href="/Home/List" class="custom-button green-button" style="margin-right: 10px;">
+                <i class="fas fa-arrow-left"></i> Continue Shopping
+            </a>
+            <a href="/Cart/Checkout" class="custom-button">
+                <i class="fas fa-check"></i> Complete Shopping
+            </a>
+        </div>
+
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            There are no products in your cart.
+        </div>
+    }
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/f1586a1352.js" crossorigin="anonymous"></script>
+

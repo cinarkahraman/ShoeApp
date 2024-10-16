@@ -1,0 +1,8 @@
+//kids running adidas
+ new Product() { Name = "Adidas Disney Tensaur , Subtitle = "Kids shoes", Description = "Adidas Disney Tensaur Sport Kids Shoe", Price = 160, Stock = 100, IsApproved = true, CategoryId = 2, IsHome = false, Image = "Disney_Tensaur_Sport_Kids_Ayakkabi_Beyaz_ID8011_06_standard.jpg", Image2 = "Disney_Tensaur_Sport_Kids_Ayakkabi_Beyaz_ID8011_02_standard.jpg", Image3 = "Disney_Tensaur_Sport_Kids_Ayakkabi_Beyaz_ID8011_41_standard.jpg", genderId = 3, markaId = 2 },
+
+ new Product() { Name = "Adidas Tensaur Hook and Loop", Subtitle = "Kids shoes", Description = "Adidas Tensaur Hook and Loop White Kids Shoe", Price = 160, Stock = 100, IsApproved = true, CategoryId = 2, IsHome = false, Image = "Tensaur_Hook_and_Loop_Ayakkabi_Beyaz_GW6451_06_standard.jpg", Image2 = "Tensaur_Hook_and_Loop_Ayakkabi_Beyaz_GW6451_02_standard.jpg", Image3 = "Tensaur_Hook_and_Loop_Ayakkabi_Beyaz_GW6451_42_standard.jpg", genderId = 3, markaId = 2 },
+        
+
+
+ 

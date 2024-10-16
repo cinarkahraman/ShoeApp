@@ -1,0 +1,477 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9EE03D93-ED66-41ED-9AD0-A8F7C28854BD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abc.MvcWebUI</RootNamespace>
+    <AssemblyName>Abc.MvcWebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.4\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.4\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="theme\css\style.css" />
+    <Content Include="theme\home.html" />
+    <Content Include="theme\img\camera.jpg" />
+    <Content Include="theme\img\logo.png" />
+    <Content Include="theme\img\myproject.mp4" />
+    <Content Include="theme\img\slider.jpeg" />
+    <Content Include="theme\js\holder.min.js" />
+    <Content Include="theme\kayit.css" />
+    <Content Include="theme\kayit.html" />
+    <Content Include="theme\login.css" />
+    <Content Include="theme\login.html" />
+    <Content Include="theme\product-details.html" />
+    <Content Include="theme\product-list.html" />
+    <Content Include="theme\sepet.css" />
+    <Content Include="theme\sepet.html" />
+    <Content Include="theme\urundetay.css" />
+    <Content Include="theme\urundetay.html" />
+    <Content Include="Upload\03d951e6-cf6e-48e9-8404-2b342fc2825d.jpg" />
+    <Content Include="Upload\08df9eba-6e98-4919-8ef1-caca5a7d6b18.jpg" />
+    <Content Include="Upload\1.jpg" />
+    <Content Include="Upload\1044f0a8-8d88-4f8e-93db-9ff0da404e85.jpg" />
+    <Content Include="Upload\14cbeb44-6889-4e22-9f3c-a7dd46e7a639.jpg" />
+    <Content Include="Upload\14f94151-edb8-41e1-a35e-9463069c1fed.jpg" />
+    <Content Include="Upload\1a766f6c-5ea7-4832-9632-5b24daa1d100.jpg" />
+    <Content Include="Upload\2.jpg" />
+    <Content Include="Upload\22e935a8-5fd6-4de2-89dc-f292a0054d6d.jpg" />
+    <Content Include="Upload\23f3e113-22b4-469e-90cb-c368bca39e77.jpg" />
+    <Content Include="Upload\2bc84f5a-6be7-442c-943e-abc0226a3af2.jpg" />
+    <Content Include="Upload\2fb6ff59-aca1-4f1f-a836-0888d4f119a6.jpg" />
+    <Content Include="Upload\3.jpg" />
+    <Content Include="Upload\30821d14-ee66-4027-8ae0-96dce3b1c09f.jpg" />
+    <Content Include="Upload\35f86528-53b4-4d4b-b7e0-a5525d2b75f9.jpg" />
+    <Content Include="Upload\39029296-4157-4077-bb43-a56adb9c2239.jpg" />
+    <Content Include="Upload\3b1c0c7f-a895-49e2-bbaa-7ded55eaa2ee.jpg" />
+    <Content Include="Upload\3d6b13a2-4b2b-43c1-9de2-0d39331b5fd9.jpg" />
+    <Content Include="Upload\4.jpg" />
+    <Content Include="Upload\43aec898-30ba-43c8-91dc-187a18117849.jpg" />
+    <Content Include="Upload\47250c04-a48c-4423-ae73-8bf0a50392db.jpg" />
+    <Content Include="Upload\4a29c65e-93ce-46d6-9f25-9c24630c54d2.jpg" />
+    <Content Include="Upload\4ce5a724-2754-4790-b847-4ddf4ef448f0.jpg" />
+    <Content Include="Upload\5.jpg" />
+    <Content Include="Upload\509edbec-df90-4229-9357-6dd5a5877975.jpg" />
+    <Content Include="Upload\51cd2c73-99dc-4010-b7f9-9ee11557fac5.jpg" />
+    <Content Include="Upload\5269f39f-3b24-4e28-bf1e-a4c8f03886b4.jpg" />
+    <Content Include="Upload\53674c8e-c952-4d5b-8e4c-bf1868e90173.jpg" />
+    <Content Include="Upload\53692ee7-26db-4e4f-906f-45eeebc46ec4.jpg" />
+    <Content Include="Upload\5671f9fd-8418-47b8-990b-14f5f8a920f4.jpg" />
+    <Content Include="Upload\5b5cd478-9beb-4754-8b5f-47b72055026b.jpg" />
+    <Content Include="Upload\5ca80c60-82c6-4c4e-bff5-052593ef7759.jpg" />
+    <Content Include="Upload\6a480dac-3678-4417-b877-8fdcd3216865.jpg" />
+    <Content Include="Upload\6eb1cd60-0572-4ff2-b561-7bf20e1d80c6.jpg" />
+    <Content Include="Upload\6f796d34-61fc-453d-9715-1caa240b273f.jpg" />
+    <Content Include="Upload\7393db27-38ca-4387-a863-3fccfee68ecd.jpg" />
+    <Content Include="Upload\75129e44-3229-45b1-84a3-d9331b9049b9.jpg" />
+    <Content Include="Upload\7523b1be-8a68-485a-933e-36303d3422c0.jpg" />
+    <Content Include="Upload\7c7f9d71-4ddb-428f-937a-4f23dfd6091b.jpg" />
+    <Content Include="Upload\85066b73-904b-46a2-958d-475dee2a7fbf.jpg" />
+    <Content Include="Upload\85655275-ae6a-43da-bb5c-877f1949f08e.jpg" />
+    <Content Include="Upload\859a46b2-4398-458d-a95b-d64d059e3daa.jpg" />
+    <Content Include="Upload\8833144f-823c-40a1-90e2-f893d9bdd901.jpg" />
+    <Content Include="Upload\893d1d8d-d78f-497c-9c50-4b5147a6ad71.jpg" />
+    <Content Include="Upload\8abf1372-0b4a-4c28-aa80-1e06175e68da.jpg" />
+    <Content Include="Upload\8d3ec4e3-a62a-46ba-a8cd-dc34f3270101.jpg" />
+    <Content Include="Upload\900eb19c-2d7e-4657-9412-169b56ec9a37.jpg" />
+    <Content Include="Upload\90cfd816-0084-440b-a16e-1fe1b053169e.jpg" />
+    <Content Include="Upload\91e1ca3d-de38-4e13-be1b-3926df9f1a16.jpg" />
+    <Content Include="Upload\92b7be44-9043-43e5-a7f8-63cf1ce496be.jpg" />
+    <Content Include="Upload\935c0a70-433f-4473-ba56-ab52ea1a73e8.jpg" />
+    <Content Include="Upload\9a127777-bee7-4176-a5f3-7d1c91934135.jpg" />
+    <Content Include="Upload\9ecba19c-a2a3-4047-896e-46bbab267521.jpg" />
+    <Content Include="Upload\air-jordan-1-elevate-low-ayakkabısı-Qv9ztx.jpg" />
+    <Content Include="Upload\air-jordan-1-low-ayakkabısı-1RBB3r %281%29.jpg" />
+    <Content Include="Upload\air-jordan-1-low-ayakkabısı-1RBB3r.jpg" />
+    <Content Include="Upload\air-max-bella-tr-5-womens-workout-shoes-tLCg4B.jpg" />
+    <Content Include="Upload\b1161531-176e-44f3-9f6a-ceb07420ddf4.jpg" />
+    <Content Include="Upload\b1aa239e-6f24-4d50-bcc8-d02f0e8acb41.jpg" />
+    <Content Include="Upload\b56dcc9e-4128-4941-9f1a-8cce6f731a39.jpg" />
+    <Content Include="Upload\b5c12cb2-11a9-4d8e-94d5-01872c75b564.jpg" />
+    <Content Include="Upload\b855ac19-a8ce-4253-a799-896415124895.jpg" />
+    <Content Include="Upload\c67d98a4-c6f0-42a1-ab3e-764c1d0f341d.jpg" />
+    <Content Include="Upload\c82501e4-317d-4cc4-bd10-e7c947ce31a0.jpg" />
+    <Content Include="Upload\cba4153d-f758-47a5-810f-4bd1269121fa.jpg" />
+    <Content Include="Upload\d015d68b-1318-4c9d-bc79-9ac67c01cae4.jpg" />
+    <Content Include="Upload\d3bd8eb7-0630-4181-8a34-b9aad4f1b846.jpg" />
+    <Content Include="Upload\d3d9a013-77b5-4fa8-9105-ae2109753d29.jpg" />
+    <Content Include="Upload\d76b79fd-e11d-458d-8177-fa1746921e21.jpg" />
+    <Content Include="Upload\d8326a3d-b58f-4514-8d84-8da446e5c646.jpg" />
+    <Content Include="Upload\d890de82-95ba-457d-90da-c10c6b833254.jpg" />
+    <Content Include="Upload\df2b8e99-04ef-4fc0-9829-ede777268337.jpg" />
+    <Content Include="Upload\downshifter-12-yol-koşu-ayakkabısı-L3TXTF %281%29.jpg" />
+    <Content Include="Upload\downshifter-12-yol-koşu-ayakkabısı-L3TXTF.jpg" />
+    <Content Include="Upload\e4170bf1-6073-416a-bcda-6015bf0e4626.jpg" />
+    <Content Include="Upload\e43bc784-567b-4ed3-9c22-498bf7ca7f0f.jpg" />
+    <Content Include="Upload\e462698f-a806-4b9f-980b-cdd06c4c43b8.jpg" />
+    <Content Include="Upload\e4a9be08-d8ab-472e-b5c4-42dccc7adb05.jpg" />
+    <Content Include="Upload\e56667e1-2e5a-4ef2-ae8c-7c5d568a5902.jpg" />
+    <Content Include="Upload\ed1a6946-d71f-4b32-b4f0-1af7b5a18b4b.jpg" />
+    <Content Include="Upload\edcbbe7d-f37c-40cb-b06d-5130d22e171f.jpg" />
+    <Content Include="Upload\eecaefa7-0d29-4efe-b671-3438dc6df887.jpg" />
+    <Content Include="Upload\f100d382-7d3d-4849-8fd7-53310a44d08b.jpg" />
+    <Content Include="Upload\f111a89f-6abd-46fc-ba1b-25139f7d7f14.jpg" />
+    <Content Include="Upload\f1419e6a-8410-42e5-a1af-e6c4410aa190.jpg" />
+    <Content Include="Upload\f2d8e116-6108-437d-b135-9b6cdcd463bb.jpg" />
+    <Content Include="Upload\f3408887-7dce-4d3a-a895-6b6e9a2c1132.jpg" />
+    <Content Include="Upload\f3b57dd1-23a3-45c6-9fc2-9e0a2657fe05.jpg" />
+    <Content Include="Upload\f5c33cc0-c240-4cd4-8437-1a58b2d3d6a1.jpg" />
+    <Content Include="Upload\fb7757bf-a7d5-4cc5-b02d-e4e2fa5f566a.jpg" />
+    <Content Include="Upload\fe343b90-8bb4-4511-9d04-8a782f1b0fac.jpg" />
+    <Content Include="Upload\fef3a7d5-f71e-470c-b9eb-dc707ab9a645.jpg" />
+    <Content Include="Upload\in-season-tr-13-antrenman-ayakkabısı-qkQTD2.jpg" />
+    <Content Include="Upload\juniper-trail-2-gore-tex-su-geçirmez-arazi-tipi-koşu-ayakkabısı-2rnGqT %281%29.jpg" />
+    <Content Include="Upload\juniper-trail-2-gore-tex-su-geçirmez-arazi-tipi-koşu-ayakkabısı-2rnGqT.jpg" />
+    <Content Include="Upload\kadın jpg\nike\NikeSP16 %281%29.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\03d951e6-cf6e-48e9-8404-2b342fc2825d.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\08df9eba-6e98-4919-8ef1-caca5a7d6b18.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\14f94151-edb8-41e1-a35e-9463069c1fed.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\1a766f6c-5ea7-4832-9632-5b24daa1d100.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\22e935a8-5fd6-4de2-89dc-f292a0054d6d.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\2fb6ff59-aca1-4f1f-a836-0888d4f119a6.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\39029296-4157-4077-bb43-a56adb9c2239.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\3d6b13a2-4b2b-43c1-9de2-0d39331b5fd9.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\43aec898-30ba-43c8-91dc-187a18117849.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\4ce5a724-2754-4790-b847-4ddf4ef448f0.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\509edbec-df90-4229-9357-6dd5a5877975.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\51cd2c73-99dc-4010-b7f9-9ee11557fac5.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\53692ee7-26db-4e4f-906f-45eeebc46ec4.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\5671f9fd-8418-47b8-990b-14f5f8a920f4.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\5b5cd478-9beb-4754-8b5f-47b72055026b.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\5ca80c60-82c6-4c4e-bff5-052593ef7759.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\6f796d34-61fc-453d-9715-1caa240b273f.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\7c7f9d71-4ddb-428f-937a-4f23dfd6091b.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\85655275-ae6a-43da-bb5c-877f1949f08e.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\859a46b2-4398-458d-a95b-d64d059e3daa.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\893d1d8d-d78f-497c-9c50-4b5147a6ad71.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\900eb19c-2d7e-4657-9412-169b56ec9a37.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\92b7be44-9043-43e5-a7f8-63cf1ce496be.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\9ecba19c-a2a3-4047-896e-46bbab267521.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\air-jordan-1-elevate-low-ayakkabısı-Qv9ztx.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\air-jordan-1-low-ayakkabısı-1RBB3r %281%29.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\air-jordan-1-low-ayakkabısı-1RBB3r.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\b1161531-176e-44f3-9f6a-ceb07420ddf4.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\c67d98a4-c6f0-42a1-ab3e-764c1d0f341d.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\c82501e4-317d-4cc4-bd10-e7c947ce31a0.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\d015d68b-1318-4c9d-bc79-9ac67c01cae4.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\df2b8e99-04ef-4fc0-9829-ede777268337.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\e43bc784-567b-4ed3-9c22-498bf7ca7f0f.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\eecaefa7-0d29-4efe-b671-3438dc6df887.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\f5c33cc0-c240-4cd4-8437-1a58b2d3d6a1.jpg" />
+    <Content Include="Upload\kadın jpg\nike\casual\fef3a7d5-f71e-470c-b9eb-dc707ab9a645.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\14cbeb44-6889-4e22-9f3c-a7dd46e7a639.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\2bc84f5a-6be7-442c-943e-abc0226a3af2.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\30821d14-ee66-4027-8ae0-96dce3b1c09f.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\47250c04-a48c-4423-ae73-8bf0a50392db.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\4a29c65e-93ce-46d6-9f25-9c24630c54d2.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\5269f39f-3b24-4e28-bf1e-a4c8f03886b4.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\53674c8e-c952-4d5b-8e4c-bf1868e90173.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\6a480dac-3678-4417-b877-8fdcd3216865.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\75129e44-3229-45b1-84a3-d9331b9049b9.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\85066b73-904b-46a2-958d-475dee2a7fbf.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\8abf1372-0b4a-4c28-aa80-1e06175e68da.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\b1aa239e-6f24-4d50-bcc8-d02f0e8acb41.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\b56dcc9e-4128-4941-9f1a-8cce6f731a39.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\b5c12cb2-11a9-4d8e-94d5-01872c75b564.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\b855ac19-a8ce-4253-a799-896415124895.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\d3bd8eb7-0630-4181-8a34-b9aad4f1b846.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\d3d9a013-77b5-4fa8-9105-ae2109753d29.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\d76b79fd-e11d-458d-8177-fa1746921e21.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\d890de82-95ba-457d-90da-c10c6b833254.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\downshifter-12-yol-koşu-ayakkabısı-L3TXTF %281%29.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\downshifter-12-yol-koşu-ayakkabısı-L3TXTF.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\e4170bf1-6073-416a-bcda-6015bf0e4626.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\e462698f-a806-4b9f-980b-cdd06c4c43b8.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\f100d382-7d3d-4849-8fd7-53310a44d08b.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\f3b57dd1-23a3-45c6-9fc2-9e0a2657fe05.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\fb7757bf-a7d5-4cc5-b02d-e4e2fa5f566a.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\juniper-trail-2-gore-tex-su-geçirmez-arazi-tipi-koşu-ayakkabısı-2rnGqT %281%29.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\juniper-trail-2-gore-tex-su-geçirmez-arazi-tipi-koşu-ayakkabısı-2rnGqT.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\pegasus-shield-hava-şartlarına-dayanıklı-yol-koşu-ayakkabısı-Npkkgv.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\pegasus-trail-4-gore-tex-su-geçirmez-arazi-tipi-koşu-ayakkabısı-T6hRF0.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\vomero-17-yol-koşu-ayakkabısı-pLWFBD %281%29.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\vomero-17-yol-koşu-ayakkabısı-pLWFBD %282%29.jpg" />
+    <Content Include="Upload\kadın jpg\nike\runing\vomero-17-yol-koşu-ayakkabısı-pLWFBD.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\1044f0a8-8d88-4f8e-93db-9ff0da404e85.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\23f3e113-22b4-469e-90cb-c368bca39e77.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\35f86528-53b4-4d4b-b7e0-a5525d2b75f9.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\3b1c0c7f-a895-49e2-bbaa-7ded55eaa2ee.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\6eb1cd60-0572-4ff2-b561-7bf20e1d80c6.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\7393db27-38ca-4387-a863-3fccfee68ecd.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\7523b1be-8a68-485a-933e-36303d3422c0.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\8833144f-823c-40a1-90e2-f893d9bdd901.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\8d3ec4e3-a62a-46ba-a8cd-dc34f3270101.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\90cfd816-0084-440b-a16e-1fe1b053169e.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\91e1ca3d-de38-4e13-be1b-3926df9f1a16.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\935c0a70-433f-4473-ba56-ab52ea1a73e8.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\9a127777-bee7-4176-a5f3-7d1c91934135.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\air-max-bella-tr-5-womens-workout-shoes-tLCg4B.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\cba4153d-f758-47a5-810f-4bd1269121fa.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\d8326a3d-b58f-4514-8d84-8da446e5c646.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\e4a9be08-d8ab-472e-b5c4-42dccc7adb05.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\e56667e1-2e5a-4ef2-ae8c-7c5d568a5902.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\ed1a6946-d71f-4b32-b4f0-1af7b5a18b4b.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\edcbbe7d-f37c-40cb-b06d-5130d22e171f.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\f111a89f-6abd-46fc-ba1b-25139f7d7f14.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\f1419e6a-8410-42e5-a1af-e6c4410aa190.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\f2d8e116-6108-437d-b135-9b6cdcd463bb.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\f3408887-7dce-4d3a-a895-6b6e9a2c1132.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\fe343b90-8bb4-4511-9d04-8a782f1b0fac.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\in-season-tr-13-antrenman-ayakkabısı-qkQTD2.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\legend-essential-3-next-nature-antrenman-ayakkabısı-fZj9ZC %281%29.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\legend-essential-3-next-nature-antrenman-ayakkabısı-fZj9ZC.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\metcon-8-antrenman-ayakkabısı-H47LFH.jpg" />
+    <Content Include="Upload\kadın jpg\nike\training\superrep-go-3-flyknit-next-nature-womens-workout-shoes-hSZBdX.jpg" />
+    <Content Include="Upload\legend-essential-3-next-nature-antrenman-ayakkabısı-fZj9ZC %281%29.jpg" />
+    <Content Include="Upload\legend-essential-3-next-nature-antrenman-ayakkabısı-fZj9ZC.jpg" />
+    <Content Include="Upload\metcon-8-antrenman-ayakkabısı-H47LFH.jpg" />
+    <Content Include="Upload\pegasus-shield-hava-şartlarına-dayanıklı-yol-koşu-ayakkabısı-Npkkgv.jpg" />
+    <Content Include="Upload\pegasus-trail-4-gore-tex-su-geçirmez-arazi-tipi-koşu-ayakkabısı-T6hRF0.jpg" />
+    <Content Include="Upload\superrep-go-3-flyknit-next-nature-womens-workout-shoes-hSZBdX.jpg" />
+    <Content Include="Upload\vomero-17-yol-koşu-ayakkabısı-pLWFBD %281%29.jpg" />
+    <Content Include="Upload\vomero-17-yol-koşu-ayakkabısı-pLWFBD %282%29.jpg" />
+    <Content Include="Upload\vomero-17-yol-koşu-ayakkabısı-pLWFBD.jpg" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup1.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Entity\Brand.cs" />
+    <Compile Include="Entity\Category.cs" />
+    <Compile Include="Entity\DataContext.cs" />
+    <Compile Include="Entity\DataInitializer.cs" />
+    <Compile Include="Entity\EnumOrderState.cs" />
+    <Compile Include="Entity\Gender.cs" />
+    <Compile Include="Entity\Order.cs" />
+    <Compile Include="Entity\Product.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Identity\ApplicationRole.cs" />
+    <Compile Include="Identity\ApplicationUser.cs" />
+    <Compile Include="Identity\IdentitiyInitializer.cs" />
+    <Compile Include="Identity\IdentityDataContext.cs" />
+    <Compile Include="Models\AdminOrderModel.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\OrderDetailsModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\Register.cs" />
+    <Compile Include="Models\ShippingDetails.cs" />
+    <Compile Include="Models\UserOrderModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\_ProductList.cshtml" />
+    <Content Include="Views\Home\GetCategories.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Details.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
+    <Content Include="Views\Cart\Completed.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\Summary.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Home\Women.cshtml" />
+    <Content Include="Views\Home\Kids.cshtml" />
+    <Content Include="Views\Home\Men.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Upload\kadın jpg\adidas\running\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64012</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64012/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

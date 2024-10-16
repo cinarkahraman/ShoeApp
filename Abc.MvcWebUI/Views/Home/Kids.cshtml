@@ -1,0 +1,84 @@
+﻿@using Abc.MvcWebUI.Models;
+@model List<Abc.MvcWebUI.Entity.Product>
+@{
+    ViewBag.Title = "Kids";
+    ViewData["Title"] = "Kids Products";
+}
+
+<style>
+    .card {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 100%;
+        border-radius: 15px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .card-body {
+        text-align: left;
+        max-height: 150px;
+        overflow: hidden;
+    }
+
+    .card-title {
+        font-size: 16px;
+        font-weight: 400;
+        color: #484848;
+        line-height: 1.35em;
+        height: 34px;
+    }
+
+    img {
+        image-rendering: optimizeQuality;
+    }
+</style>
+
+
+<div class="container pb-5">
+    @{
+        ViewData["Title"] = "Kids " + (ViewBag.SelectedCategory ?? "") + " Products";
+    }
+
+    <div style="margin-bottom: 20px;">
+        <img src="~/Upload/kadın jpg/nike/kids-running-shoes-desktop.png" alt="Kids Image" style="width: 100%;" />
+
+        <h2 style="display: inline-block;">@ViewData["Title"]</h2>
+
+        <div class="dropdown" style="float: right; margin-top: 10px;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort by Price
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/Home/Kids?categoryId=@ViewBag.CategoryId&sortBy=asc">Lowest to Highest</a>
+                <a class="dropdown-item" href="/Home/Kids?categoryId=@ViewBag.CategoryId&sortBy=desc">Highest to Lowest</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        @foreach (var urun in Model)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="/Upload/@urun.Image" alt="@urun.Name" style="width: 100%; height: auto; max-width: 100%;" />
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="/Home/Details/@urun.Id">@urun.Name</a>
+                        </h4>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted product-price">
+                            <i class="fa fa-try" aria-hidden="true"></i>
+                            @urun.Price
+                        </small>
+                        <a href="/Home/Details/@urun.Id" class="btn btn-default btn-sm float-right">
+                            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Abc.MvcWebUI.Entity.Category>
+@{
+    var selectedCategory = Url.RequestContext.RouteData.Values["id"];
+}
+<style>
+    .list-group {
+        margin-top: 10px;
+    }
+
+    .list-group-item {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #555;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        padding: 15px;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+        .list-group-item i {
+            margin-right: 10px;
+        }
+
+        .list-group-item:hover {
+            background-color: #FFC47E; /* Turuncu renk */
+            color: #fff;
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(177, 145, 110, 0.1);
+        }
+
+        .list-group-item.active {
+            background-color: #FFC47E;
+            color: #fff;
+            border-color: #EE7214;
+            box-shadow: 0 4px 8px rgba(177, 145, 110, 0.1);
+        }
+    .a {
+        color: #7D0A0A;
+    }
+
+</style>
+<ul class="list-group">
+
+    <a href="/Home/List" class="list-group-item">
+        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+        All Categories
+    </a>
+
+    @foreach (var item in Model)
+    {
+        if (selectedCategory != null)
+        {
+            if (item.Id == int.Parse(selectedCategory.ToString()))
+            {
+                //seçilen kategori ile route id si birbirine eşit.
+                <a href="/Home/List/@item.Id" class="list-group-item active">
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    @item.Name
+                </a>
+                
+            }
+            else
+            {
+                <a href="/Home/List/@item.Id" class="list-group-item">
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    @item.Name
+                </a>
+            }
+        }
+        else
+        {
+            <a href="/Home/List/@item.Id" class="list-group-item">
+                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                @item.Name
+            </a>
+        }
+    }
+</ul>

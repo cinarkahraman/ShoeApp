@@ -1,0 +1,11 @@
+ //erkek running adidas
+ new Product() { Name = "Adidas Galaxy 6 Running", Subtitle = "Man Shoes", Description = "Adidas Galaxy 6 Running", Price = 160, Stock = 100, IsApproved = true, CategoryId = 2, IsHome = false, Image = "Galaxy_6_Ayakkabi_Beyaz_IE1975_06_standard.jpg", Image2 = "Galaxy_6_Ayakkabi_Beyaz_IE1975_02_standard.jpg", Image3 = "Galaxy_6_Ayakkabi_Beyaz_IE1975_42_standard.jpg", genderId = 2, markaId = 2 },
+
+ new Product() { Name = "Adidas OZWEEGO", Subtitle = "Man Shoes", Description = "Adidas Running White Shoe", Price = 160, Stock = 100, IsApproved = true, CategoryId = 2, IsHome = false, Image = "OZWEEGO_Ayakkabi_Beyaz_EE6464_06_standard.jpg", Image2 = "OZWEEGO_Ayakkabi_Beyaz_EE6464_02_standard.jpg", Image3 = "OZWEEGO_Ayakkabi_Beyaz_EE6464_41_standard.jpg", genderId = 2, markaId = 2 },
+        
+ new Product() { Name = "Adidas Ultra 4D", Subtitle = "Man Shoes", Description = "Adidas Running", Price = 160, Stock = 100, IsApproved = true, CategoryId = 2, IsHome = false, Image = "Ultra_4D_Ayakkabi_Gri_IG2260_06_standard.jpg", Image2 = "Ultra_4D_Ayakkabi_Gri_IG2260_02_standard.jpg", Image3 = "Ultra_4D_Ayakkabi_Gri_IG2260_42_standard.jpg", genderId = 2, markaId = 2 },
+
+ new Product() { Name = "Adidas UltraBoost ", Subtitle = "Man Shoes", Description = "Adidas UltraBoost Light", Price = 160, Stock = 100, IsApproved = true, CategoryId = 2, IsHome = false, Image = "ULTRABOOST_LIGHT_Siyah_IE8155_06_standard.jpg", Image2 = "ULTRABOOST_LIGHT_Siyah_IE8155_02_standard.jpg", Image3 = "ULTRABOOST_LIGHT_Siyah_IE8155_42_standard.jpg", genderId = 2, markaId = 2 },
+
+ new Product() { Name = "Adidas X PLR BOOST", Subtitle = "Man Shoes", Description = "Adidas X PLR BOOST BLACK", Price = 160, Stock = 100, IsApproved = true, CategoryId = 2, IsHome = false, Image = "X_PLR_Boost_Ayakkabi_Siyah_IG8506_06_standard.jpg", Image2 = "X_PLR_Boost_Ayakkabi_Siyah_IG8506_02_standard.jpg", Image3 = "X_PLR_Boost_Ayakkabi_Siyah_IG8506_43_standard.jpg", genderId = 2, markaId = 2 },
+  };

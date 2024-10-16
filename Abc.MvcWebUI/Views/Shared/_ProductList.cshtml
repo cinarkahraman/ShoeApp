@@ -1,0 +1,67 @@
+﻿@using Abc.MvcWebUI.Models;
+@model IEnumerable<ProductModel>
+<style>
+    .card {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 100%;
+        border-radius: 15px;
+        margin: 0 auto; /* Ortala */
+        margin-top: 10px; /* İstenilen boşluk değeri */
+    }
+
+    .card-body {
+        text-align: left;
+    }
+
+    .card-title {
+        font-size: 16px;
+        font-weight: 400;
+        color: #484848;
+        line-height: 1.35em;
+        height: 34px;
+    }
+
+        .card-title a {
+            color: #7D0A0A;
+            text-decoration: none; /* Optional: Remove underline */
+        }
+
+        .card-footer a {
+            color: #ff0000;
+            text-decoration: none; /* Optional: Remove underline */
+        }
+</style>
+<div class="row">
+
+    @foreach (var urun in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img class="card-img-top" src="/Upload/@urun.Image" alt="@urun.Name">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="/Home/Details/@urun.Id"> @urun.Name</a>
+                    </h4>
+                    <p><strong>@urun.Subtitle</strong></p>
+
+                    <p class="card-text pt-2 description">
+                        @urun.Description
+                    </p>
+
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted product-price">
+                        <i class= aria-hidden="true" style="text"></i>
+                        <strong>@urun.Price$</strong>
+                    </small>
+                    <a href="/Home/Details/@urun.Id" class="btn btn-default btn-sm float-right">
+                        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                        View
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>  

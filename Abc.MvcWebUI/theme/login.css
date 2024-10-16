@@ -1,0 +1,46 @@
+body {
+    background-color: #f8f9fa;
+    background-image: url('background-pattern.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    border-radius: 15px; /* Yuvarlak kenarlık ekleniyor */
+}
+
+.card-body {
+    text-align: left;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.btn-primary {
+    background-color: #ff416c;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color:#ff416c;
+}
+
+.btn-outline-secondary {
+    color: #ff416c;
+    border-color: #ff416c;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #ff416c;
+    color: #fff;
+}

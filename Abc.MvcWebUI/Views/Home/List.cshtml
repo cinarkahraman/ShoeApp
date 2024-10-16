@@ -1,0 +1,41 @@
+﻿@using Abc.MvcWebUI.Models
+@model IEnumerable<ProductModel>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<div class="container pb-5">
+    <div class="row">
+        <div class="col-md-3">
+            @Html.Action("GetCategories", "Home")
+        </div>
+
+        <div class="col-md-9">
+
+            @if (Model.Count() == 0)
+            {
+                <div class="alert alert-warning" role="alert">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                    No product found in this category.
+                </div>
+            }
+            else if (Model.Count() == 1)
+            {
+                <div class="alert alert-warning" role="alert">
+                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                    <strong>@Model.Count()</strong> product found.
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning" role="alert">
+                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                    <strong>@Model.Count()</strong> products found.
+                </div>
+            }
+
+            @Html.Partial("_ProductList", Model)
+        </div>
+    </div>
+</div>

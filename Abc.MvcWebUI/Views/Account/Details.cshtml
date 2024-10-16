@@ -1,0 +1,108 @@
+﻿@using Abc.MvcWebUI.Entity
+@model Abc.MvcWebUI.Models.OrderDetailsModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2>Order Details</h2>
+            <hr />
+
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Order State</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.OrderState == EnumOrderState.Waiting)
+                            {
+                                <span class="badge badge-danger">Waiting for Approval</span>
+                            }
+                            else if (Model.OrderState == EnumOrderState.Completed)
+                            {
+                                <span class="badge badge-success">Order Completed</span>
+                            }
+                        </dd>
+
+                        <dt class="col-sm-4">Order Id</dt>
+                        <dd class="col-sm-8">@Model.OrderId</dd>
+
+                        <dt class="col-sm-4">Order Number</dt>
+                        <dd class="col-sm-8">@Model.OrderNumber</dd>
+
+                        <dt class="col-sm-4">Total</dt>
+                        <dd class="col-sm-8">
+                            <i class="fa fa-usd" aria-hidden="true"></i>
+                            @Model.Total
+                        </dd>
+
+                        <dt class="col-sm-4">Order Date</dt>
+                        <dd class="col-sm-8">@Model.OrderDate</dd>
+                    </dl>
+                </div>
+
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Address</dt>
+                        <dd class="col-sm-8">
+                            @Model.AdresBasligi
+                            <hr />
+                            @Model.Adres
+                            <br />
+                            @Model.Sehir - @Model.Semt - @Model.Mahalle
+                            <br />
+                            @Model.PostaKodu
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <h4>Products</h4>
+                    <table class="table table-bordered">
+
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Orderlines)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="/Upload/@item.Image" width="70" />
+                                    </td>
+                                    <td>
+                                        @item.ProductName
+                                    </td>
+                                    <td>
+                                        @item.Quantity
+                                    </td>
+                                    <td>
+                                        <i class="fa fa-usd" aria-hidden="true"></i>
+                                        @item.Price
+                                    </td>
+                                    <td>
+                                        <a href="/Home/Details/@item.ProductId" class="btn btn-primary btn-sm" target="_blank">
+                                            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                            Product Details
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

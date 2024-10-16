@@ -1,0 +1,130 @@
+﻿@model Abc.MvcWebUI.Models.Register
+
+@{
+    ViewBag.Title = "title";
+}
+<style>
+    .card {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        width: 100%;
+        border-radius: 15px; /* Yuvarlak kenarlık ekleniyor */
+        margin: 0 auto; /* Center the card */
+        text-align: center;
+    }
+
+    .card-body {
+        text-align: left;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .btn-primary {
+        background-color: #FFAD84;
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #FFAD84;
+        }
+
+    .btn-outline-secondary {
+        color: #FFAD84;
+        border-color: #FFAD84;
+    }
+
+        .btn-outline-secondary:hover {
+            background-color: #FFAD84;
+            color: #fff;
+        }
+
+    .custom-btn {
+        width: 150px; /* Set the desired width */
+        height: 40px; /* Set the desired height */
+    }
+</style>
+
+<div class="container pb-5">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="text-center">Create User</h1>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.SurName, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.SurName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.SurName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            <!-- Password field -->
+                            @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Password" })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.RePassword, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            <!-- Re-enter password field -->
+                            @Html.PasswordFor(model => model.RePassword, new { @class = "form-control", placeholder = "Re-enter Password" })
+                            @Html.ValidationMessageFor(model => model.RePassword, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-9 text-center">
+                            <input type="submit" value="Create User" class="btn btn-primary custom-btn" />
+                        </div>
+                    </div>
+
+                    <p class="text-center mt-3">Already have an account? <a href="/Account/Login/" class="btn btn-outline-secondary btn-sm">Log In</a></p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+

@@ -1,0 +1,6 @@
+ //woman original adidas
+ new Product() { Name = "Adidas GAZELLE 85", Subtitle = "Woman shoes", Description = "Adidas GAZELLE 85 Woman Pink", Price = 160, Stock = 100, IsApproved = true, CategoryId = 2, IsHome = false, Image = "GAZELLE_85_Pembe_IG5004_06_standard.avif", Image2 = "GAZELLE_85_Pembe_IG5004_02_standard.avif", Image3 = "GAZELLE_85_Pembe_IG5004_42_standard.avif", genderId = 1, markaId = 2 },
+
+ new Product() { Name = "Adidas Samba", Subtitle = "Woman shoes", Description = "Adidas Samba Originals Woman Pink", Price = 160, Stock = 100, IsApproved = true, CategoryId = 2, IsHome = false, Image = "Samba_Ayakkabi_Pembe_ID3737_06_standard.avif", Image2 = "Samba_Ayakkabi_Pembe_ID3737_02_standard.avif", Image3 = "Samba_Ayakkabi_Pembe_ID3737_41_standard.avif", genderId = 1, markaId = 2 },
+        
+ new Product() { Name = "Adias Superstar", Subtitle = "Woman shoes", Description = "Adidas Superstar Originals", Price = 160, Stock = 100, IsApproved = true, CategoryId = 2, IsHome = false, Image = "Superstar_Ayakkabi_Beyaz_EG4960_06_standard.avif", Image2 = "Superstar_Ayakkabi_Beyaz_EG4960_02_standard.avif", Image3 = "Superstar_Ayakkabi_Beyaz_EG4960_42_standard.avif", genderId = 1, markaId = 2 },

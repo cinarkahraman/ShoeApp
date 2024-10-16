@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="sepet.css">
+    <title>Alışveriş Sepeti</title>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center">Alışveriş Sepeti</h1>
+
+    @if (Model.CartLines.Count > 0)
+    {
+        <div class="cart">
+            @foreach (var item in Model.CartLines)
+            {
+                <div class="cart-item">
+                    <div class="product-box">
+                        <img src="/Upload/@item.Product.Image" alt="@item.Product.Name" class="product-image">
+                        <div class="product-details">
+                            <div class="title-and-quantity">
+                                <h3 class="product-title">@item.Product.Name</h3>
+                            </div>
+                            <p class="product-price">@item.Product.Price.ToString("c")</p>
+                            <p class="product-quantity">Adet: @item.Quantity</p>
+                        </div>
+                        <form method="post" action="/Cart/RemoveFromCart">
+                            <input type="hidden" name="Id" value="@item.Product.Id" />
+                            <button type="submit" class="remove-button">
+                                <i class="fas fa-trash-alt"></i> Kaldır
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            }
+
+            <div class="cart-total">
+                <div class="total-box">
+                    <p class="total-text">Toplam:</p>
+                    <p class="total-amount">@Model.Total().ToString("c")</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="additional-buttons" style="display: flex; justify-content: flex-end; margin-top: 20px;">
+            <a href="/Home/List" class="custom-button" style="margin-right: 10px;">
+                <i class="fas fa-arrow-left"></i> Alışverişe Devam Et
+            </a>
+            <a href="/Cart/Checkout" class="custom-button">
+                <i class="fas fa-check"></i> Alışverişi Tamamla
+            </a>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            Sepetinizde ürün bulunmamaktadır.
+        </div>
+    }
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/f1586a1352.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

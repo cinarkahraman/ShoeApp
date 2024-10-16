@@ -1,0 +1,145 @@
+﻿@using Abc.MvcWebUI.Models;
+@model IEnumerable<ProductModel>
+@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" href="/theme/css/style.css">
+
+<style>
+    #video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        filter: blur(7px) grayscale(90%);
+    }
+
+    .jumbotron {
+        position: relative;
+        z-index: 1;
+    }
+
+        .jumbotron .container {
+            position: relative;
+            z-index: 2;
+        }
+
+   
+    .card {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 100%;
+        border-radius: 15px;
+        margin: 0 auto; /* Ortala */
+        margin-top: 20px; /* İstenilen boşluk değeri */
+    }
+
+    .card-body {
+        text-align: left;
+    }
+
+    .card-title {
+        font-size: 16px;
+        font-weight: 400;
+        color: #484848;
+        line-height: 1.35em;
+        height: 34px;
+    }
+
+
+    .card-title {
+        font-size: 16px;
+        font-weight: 400;
+        color: #484848;
+        line-height: 1.35em;
+        height: 34px;
+    }
+
+    .title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .custom-frame {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    /* Logo stil ayarları */
+    .logo {
+        max-width: 50%;
+        height: auto;
+    }
+
+    .product-list-title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    /* Yeni eklenen stil */
+    .framed-title {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        margin-top: 20px;
+    }
+</style>
+
+<div id="video-container">
+    <video autoplay muted loop>
+        <source src="~/theme/img/myproject.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <!-- Doğru logo eklenen kısım -->
+                    <img src="~/theme/img/logo.png" alt="Logo" class="logo">
+                    <p class="lead">“You take the first step..”</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pb-5">
+    <div class="title-container">
+        <div class="custom-frame">
+            <img src="~/theme/img/logo.png" alt="Logo" class="logo">
+        </div>
+    </div>
+
+    <!-- Yeni başlık eklenen kısım -->
+    <div class="framed-title">
+        <div class="product-list-title">
+            Winter Sale
+        </div>
+    </div>
+
+    @Html.Partial("_ProductList", Model)
+</div>
+<script>
+    // Sayfa kaydıkça videoyu kaydır
+    document.addEventListener("scroll", function () {
+        var scrolled = window.scrollY;
+        var video = document.getElementById("background-video");
+        video.style.transform = "translateY(" + scrolled * 0.5 + "px)";
+    });
+</script>

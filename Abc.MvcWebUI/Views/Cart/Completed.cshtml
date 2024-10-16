@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Completed";
+}
+<style>
+       .additional-buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+
+    .custom-button {
+        display: inline-block;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border-radius: 5px;
+    }
+
+    .green-button {
+        background-color: #4CAF50;
+    }
+
+    .custom-button i {
+        margin-right: 5px;
+    }
+
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-warning" role="alert">
+                <h2>Order Completed!</h2>
+                <h4>The products you purchased will be shipped as soon as possible.</h4>
+
+            </div>
+
+            <div class="additional-buttons" style="display: flex; justify-content: flex-end; margin-top: 20px;">
+                <a href="/Home/List" class="custom-button green-button" style="margin-right: 10px;">
+                    <i class="fas fa-arrow-left"></i> Continue Shopping
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
